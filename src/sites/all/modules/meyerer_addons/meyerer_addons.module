@@ -1,0 +1,73 @@
+<?php
+/**
+ * Some helping functions
+ *
+ * @copyright   2014 meyerer.de
+ * @version     $Id: $
+ * @author      frank meyerer <frank@meyerer.de>
+*/
+
+/**
+ *
+ * Returns a rendered picture
+ *
+ * @author     frank meyerer <frank@meyerer.de>
+ *
+ * @param $fid
+ *   File id
+ * @return
+ *   html image link
+ */
+function meyerer_addons_render_recentpics($fid = 0)
+{
+    $pic = file_load($fid);
+    $pic_more = file_usage_list($pic);
+    $nid = key($pic_more['file']['node']);
+    $node_info = node_load($nid);
+    foreach($node_info->field_gallery_image['und'] as $k => $v)
+    {
+        if($v['fid'] == $fid)
+        {
+            $pic_info = $v;
+            break;
+        }
+    }
+
+    $pic_render = theme('image_style', array('style_name' => 'square_200',
+                                               'path' => $pic->uri,
+                                               'alt' => $pic_info['alt'],
+                                               'title' => $pic_info['title'],
+                                               'attributes' => array('class' => 'imagefield-square_200')));
+
+    $link_render = l($pic_render, 'node/' . $node_info->nid, array('html' => array('html' => 'true')));
+
+    return $link_render;
+}
+
+function meyerer_addons_wysiwyg_editor_settings_alter(&$settings, &$context) {
+    if($context['profile']->editor == 'ckeditor_extended') {
+        $settings['allowedContent'] = array(
+            'b',
+            'i',
+            'strike',
+            'p',
+            'address',
+            'pre',
+            'h2',
+            'h3',
+            'h4',
+            'span(marker-1)',
+            'ol',
+            'ul',
+            'li',
+            'blockquote',
+            'a[href]',
+            'table[border,cellpadding,cellspacing,style,width,height,align,caption,summary]',
+            'tr',
+            'th',
+            'td',
+            'caption'
+        );
+        $settings['entities_latin'] = false;
+    }
+}
