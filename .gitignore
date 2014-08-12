@@ -1,6 +1,9 @@
 # Ignore configuration files that may contain sensitive information.
 sites/*/*settings*.php
 
+#Material
+_stuff/
+
 # Ignore paths that contain generated content.
 cache/
 files/
