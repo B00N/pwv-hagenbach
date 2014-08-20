@@ -352,7 +352,6 @@ p.blog-title{
 }
 .blog-title a{
   font-size: 16px;
-  color: #4c4c4c;
   text-decoration: none;
 }
 .blog-info span{
@@ -362,7 +361,6 @@ p.blog-title{
   padding: 0;
 }
 .blog-info span a{
-  color: #86bc24;
   font-size: 11px;
   text-decoration: underline;
 }
@@ -383,7 +381,6 @@ p.blog-title{
 }
 a.visit-our-blog{
   /* background: url("../images/link_more.png") no-repeat scroll 0 0 transparent; */
-  color: #86bc24;
   display: block;
   font-size: 16px;
   height: 38px;
@@ -1380,8 +1377,8 @@ blockquote{
 blockquote p{
   font-size: 12px;
 }
-a, a:visited{
-  color: #86bc24;
+a {
+  color: #507113;
 }
 a:hover{
   color: #C60000;
@@ -1462,7 +1459,7 @@ p.border-left{
   margin-right: 15px;
   margin-bottom: 20px;
   padding: 3px 6px;
-  background-color: #d8bcab;
+  background-color: #E1F4BF;
 }
 
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item {
@@ -1473,9 +1470,13 @@ p.border-left{
 
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item a {
   color: #808080;
-  font-size: 18px;
+  font-size: 17px;
   border-bottom: 2px solid #808080;
   text-decoration: none;
+}
+
+#views-exposed-form-events-page #edit-field-event-category-tid-36 {
+  margin-right: 0;
 }
 
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item a:hover {
@@ -1534,6 +1535,7 @@ p.border-left{
 
 .view-events .view-content .views-row {
   border-bottom-width: 4px;
+  min-height: 122px;
 }
 
 .view-id-guestbook .views-field-created {
@@ -1568,8 +1570,19 @@ p.border-left{
     margin-right: 14px;
   }
 
-#block-system-main > div > div > div.group-footer > div.field.field-name-field-gallery-image.field-type-image.field-label-above > div.field-items > div:nth-child(3)
+.view-id-api .views-table {
+  margin-bottom: 40px;
+}
 
+.view-id-api .views-table td {
+  padding: 5px 10px;
+}
+
+.view-id-api .views-table th {
+  font-weight: bold;
+}
+
+#block-system-main > div > div > div.group-footer > div.field.field-name-field-gallery-image.field-type-image.field-label-above > div.field-items > div:nth-child(3)
 
 /* #Page Styles
 ================================================== */
