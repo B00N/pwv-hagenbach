@@ -21,26 +21,27 @@
 function meyerer_addons_render_recentpics($fid = 0)
 {
     $pic = file_load($fid);
-    $pic_more = file_usage_list($pic);
-    $nid = key($pic_more['file']['node']);
-    $node_info = node_load($nid);
-    foreach($node_info->field_gallery_image['und'] as $k => $v)
-    {
-        if($v['fid'] == $fid)
-        {
-            $pic_info = $v;
-            break;
-        }
+    if($pic) {
+      $pic_more = file_usage_list($pic);
+      $nid = key($pic_more['file']['node']);
+      $node_info = node_load($nid);
+      foreach($node_info->field_gallery_image['und'] as $k => $v)
+      {
+          if($v['fid'] == $fid)
+          {
+              $pic_info = $v;
+              break;
+          }
+      }
+
+      $pic_render = theme('image_style', array('style_name' => 'square_200',
+                                                 'path' => $pic->uri,
+                                                 'alt' => $pic_info['alt'],
+                                                 'title' => $pic_info['title'],
+                                                 'attributes' => array('class' => 'imagefield-square_200')));
+
+      $link_render = l($pic_render, 'node/' . $node_info->nid, array('html' => array('html' => 'true')));
     }
-
-    $pic_render = theme('image_style', array('style_name' => 'square_200',
-                                               'path' => $pic->uri,
-                                               'alt' => $pic_info['alt'],
-                                               'title' => $pic_info['title'],
-                                               'attributes' => array('class' => 'imagefield-square_200')));
-
-    $link_render = l($pic_render, 'node/' . $node_info->nid, array('html' => array('html' => 'true')));
-
     return $link_render;
 }
 
