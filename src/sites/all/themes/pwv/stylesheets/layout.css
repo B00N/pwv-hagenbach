@@ -1459,7 +1459,7 @@ p.border-left{
   margin-right: 15px;
   margin-bottom: 20px;
   padding: 3px 6px;
-  background-color: #E1F4BF;
+  background-color: #d9d9d9;
 }
 
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item {
@@ -1486,7 +1486,7 @@ p.border-left{
 
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item a.active {
   color: #C60000;
-  border-bottom: 2px solid #C60000;
+  border-bottom: 5px solid #C60000;
 }
 
 .view-events .view-content .views-row {
@@ -1498,7 +1498,13 @@ p.border-left{
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-34 a:hover,
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-34 a.active,
 .view-events .view-content .edit-field-event-category-tid-34 {
-  border-bottom: 2px solid #5e7f65;
+  border-bottom: 5px solid #5e7f65;
+}
+
+.view-events .view-content .edit-field-event-category-tid-34.isotope-item {
+  background-image: url("../images/icon_family_color.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
 }
 
 /* PLanwanderungen */
@@ -1506,7 +1512,13 @@ p.border-left{
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-35 a:hover,
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-35 a.active,
 .view-events .view-content .edit-field-event-category-tid-35 {
-  border-bottom: 2px solid #3e4670;
+  border-bottom: 5px solid #3e4670;
+}
+
+.view-events .view-content .edit-field-event-category-tid-35.isotope-item {
+background-image: url("../images/icon_all_color.png");
+background-repeat: no-repeat;
+background-position: right bottom;
 }
 
 /* Seniorenwanderungen */
@@ -1514,7 +1526,13 @@ p.border-left{
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-38 a:hover,
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-38 a.active,
 .view-events .view-content .edit-field-event-category-tid-38 {
-  border-bottom: 2px solid #e29014;
+  border-bottom: 5px solid #e29014;
+}
+
+.view-events .view-content .edit-field-event-category-tid-38.isotope-item {
+  background-image: url("../images/icon_elderly_color.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
 }
 
 /* Sonderwanderungen */
@@ -1522,7 +1540,7 @@ p.border-left{
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-37 a:hover,
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-37 a.active,
 .view-events .view-content .edit-field-event-category-tid-37 {
-  border-bottom: 2px solid #9665a0;
+  border-bottom: 5px solid #9665a0;
 }
 
 /* Seniorenwanderungen */
@@ -1530,11 +1548,11 @@ p.border-left{
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-36 a:hover,
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-36 a.active,
 .view-events .view-content .edit-field-event-category-tid-36 {
-  border-bottom: 2px solid #e86161;
+  border-bottom: 5px solid #e86161;
 }
 
 .view-events .view-content .views-row {
-  border-bottom-width: 4px;
+  border-bottom-width: 8px;
   min-height: 122px;
 }
 
