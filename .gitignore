@@ -1,9 +1,6 @@
 # Ignore configuration files that may contain sensitive information.
 sites/*/*settings*.php
 
-#Material
-_stuff/
-
 # Ignore paths that contain generated content.
 cache/
 files/
@@ -22,8 +19,9 @@ robots.txt
 sites/all/README.txt
 sites/all/modules/README.txt
 sites/all/themes/README.txt
+
+# IDE
 .idea
-_Bilder
-_DBDumps
-_Template
-_Trash
+
+# Material
+_*/
