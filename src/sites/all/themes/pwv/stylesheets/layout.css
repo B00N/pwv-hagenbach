@@ -1454,8 +1454,7 @@ p.border-left{
 
 .view-events .views-row{
   float: left;
-  width: 286px;
-  min-height: 106px;
+  width: 100%;
   margin-right: 15px;
   margin-bottom: 20px;
   padding: 3px 6px;
@@ -1497,11 +1496,11 @@ p.border-left{
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-34 a,
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-34 a:hover,
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-34 a.active,
-.view-events .view-content .edit-field-event-category-tid-34 {
+.view-events .view-content .event-category-tid-34 {
   border-bottom: 5px solid #5e7f65;
 }
 
-.view-events .view-content .edit-field-event-category-tid-34.isotope-item {
+.view-events .view-content .event-category-tid-34 {
   background-image: url("../images/icon_family_color.png");
   background-repeat: no-repeat;
   background-position: right bottom;
@@ -1511,11 +1510,11 @@ p.border-left{
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-35 a,
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-35 a:hover,
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-35 a.active,
-.view-events .view-content .edit-field-event-category-tid-35 {
+.view-events .view-content .event-category-tid-35 {
   border-bottom: 5px solid #3e4670;
 }
 
-.view-events .view-content .edit-field-event-category-tid-35.isotope-item {
+.view-events .view-content .event-category-tid-35 {
 background-image: url("../images/icon_all_color.png");
 background-repeat: no-repeat;
 background-position: right bottom;
@@ -1525,11 +1524,11 @@ background-position: right bottom;
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-38 a,
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-38 a:hover,
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-38 a.active,
-.view-events .view-content .edit-field-event-category-tid-38 {
+.view-events .view-content .event-category-tid-38 {
   border-bottom: 5px solid #e29014;
 }
 
-.view-events .view-content .edit-field-event-category-tid-38.isotope-item {
+.view-events .view-content .event-category-tid-38 {
   background-image: url("../images/icon_elderly_color.png");
   background-repeat: no-repeat;
   background-position: right bottom;
@@ -1539,7 +1538,7 @@ background-position: right bottom;
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-37 a,
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-37 a:hover,
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-37 a.active,
-.view-events .view-content .edit-field-event-category-tid-37 {
+.view-events .view-content .event-category-tid-37 {
   border-bottom: 5px solid #9665a0;
 }
 
@@ -1547,13 +1546,13 @@ background-position: right bottom;
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-36 a,
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-36 a:hover,
 #views-exposed-form-events-page .bef-select-as-links .form-item .form-item-edit-field-event-category-tid-36 a.active,
-.view-events .view-content .edit-field-event-category-tid-36 {
+.view-events .view-content .event-category-tid-36 {
   border-bottom: 5px solid #e86161;
 }
 
 .view-events .view-content .views-row {
   border-bottom-width: 8px;
-  min-height: 122px;
+  min-height: 70px;
 }
 
 .view-id-guestbook .views-field-created {
