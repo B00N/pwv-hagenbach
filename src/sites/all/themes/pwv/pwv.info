@@ -9,9 +9,6 @@ stylesheets[all][] = stylesheets/skeleton.css
 stylesheets[all][] = stylesheets/font/font.css
 stylesheets[all][] = stylesheets/layout.css
 
-scripts[] = javascripts/jquery.isotope.min.js
-scripts[] = javascripts/pwv.js
-
 regions[sidebar_first]  = Left sidebar
 regions[sidebar_second] = Right sidebar
 regions[top_page] = Top page
