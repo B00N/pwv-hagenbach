@@ -5,22 +5,24 @@
  * Unit tests for the override_node_options module.
  */
 
+namespace Drupal\override_node_options\Tests\Functional;
+
 /**
  * Defines a base class for testing the Override Node Options module.
  */
-class OverrideNodeOptionsTestCase extends DrupalWebTestCase {
+class OverrideNodeOptionsTest extends \DrupalWebTestCase {
 
   /**
    * A standard user with basic permissions.
    *
-   * @var stdClass
+   * @var \stdClass
    */
   protected $normalUser;
 
   /**
    * A page node to test against.
    *
-   * @var stdClass
+   * @var \stdClass
    */
   protected $node;
 
@@ -53,7 +55,7 @@ class OverrideNodeOptionsTestCase extends DrupalWebTestCase {
    * @param array $fields
    *   An array of values to check equality, keyed by node object property.
    */
-  private function assertNodeFieldsUpdated(stdClass $node, array $fields) {
+  private function assertNodeFieldsUpdated(\stdClass $node, array $fields) {
     // Re-load the node from the database to make sure we have the current
     // values.
     $node = node_load($node->nid, NULL, TRUE);
@@ -78,7 +80,7 @@ class OverrideNodeOptionsTestCase extends DrupalWebTestCase {
    * @param array $fields
    *   An array of form fields to check.
    */
-  private function assertNodeFieldsNoAccess(stdClass $node, array $fields) {
+  private function assertNodeFieldsNoAccess(\stdClass $node, array $fields) {
     $this->drupalGet("node/add/{$node->type}");
     foreach ($fields as $field) {
       $this->assertNoFieldByName($field);
@@ -91,34 +93,53 @@ class OverrideNodeOptionsTestCase extends DrupalWebTestCase {
   }
 
   /**
+   * Helper function that generates combinations.
+   */
+  private static function combinations($values, $length, $start = 0) {
+    $results = array();
+    if ($start < $length) {
+      $inner = self::combinations($values, $length, $start + 1) ?: array(array());
+      foreach ($values as $value) {
+        foreach ($inner as $result) {
+          $results[] = array_merge(array($value), $result);
+        }
+      }
+    }
+    return $results;
+  }
+
+  /**
    * Test the 'Authoring information' fieldset.
    */
   protected function testNodeOptions() {
-    $specific_user = $this->drupalCreateUser(array(
+    $common = array(
       'create page content',
       'edit any page content',
-      'override page published option',
-      'override page promote to front page option',
-      'override page sticky option',
-      'override page comment setting option',
-    ));
+    );
+    $template = array(
+      'override %s published option',
+      'override %s promote to front page option',
+      'override %s sticky option',
+      'override %s comment setting option',
+    );
+    $combinations = self::combinations(array('page', 'all'), 4);
+    $cases = array();
+    foreach ($combinations as $combination) {
+      $permissions = $common;
+      foreach ($combination as $index => $value) {
+        $permissions[] = sprintf($template[$index], $value);
+      }
+      $cases[] = $permissions;
+    }
 
-    $general_user = $this->drupalCreateUser(array(
-      'create page content',
-      'edit any page content',
-      'override all published option',
-      'override all promote to front page option',
-      'override all sticky option',
-      'override all comment setting option',
-    ));
-
-    foreach (array($specific_user, $general_user) as $account) {
+    foreach ($cases as $permissions) {
+      $account = $this->drupalCreateUser($permissions);
       $this->drupalLogin($account);
 
       $fields = array(
-        'status' => (bool) !$this->node->status,
-        'promote' => (bool) !$this->node->promote,
-        'sticky' => (bool) !$this->node->sticky,
+        'status' => !$this->node->status,
+        'promote' => !$this->node->promote,
+        'sticky' => !$this->node->sticky,
         'comment' => COMMENT_NODE_OPEN,
       );
       $this->drupalPost("node/{$this->node->nid}/edit", $fields, t('Save'));
