@@ -9,7 +9,7 @@ namespace Unish;
   */
 class cacheCommandCase extends CommandUnishTestCase {
 
-  function setUp() {
+  function set_up() {
     if (!$this->getSites()) {
       $this->setUpDrupal(1, TRUE);
     }
@@ -22,9 +22,10 @@ class cacheCommandCase extends CommandUnishTestCase {
       6 => array('variables', NULL),
       7 => array('schema', NULL),
       8 => array('system.date', 'config'),
+      9 => array('system.date', 'config'),
     );
     list($key, $bin) = $inputs[UNISH_DRUPAL_MAJOR_VERSION];
-    $this->drush('cache-get', array($key, $bin), $options + array('format' => 'json'));
+    $this->drush('cache-get', [$key, $bin], $options + array('format' => 'json'));
     $schema = $this->getOutputFromJSON('data');
     $this->assertNotEmpty($schema);
 
@@ -62,7 +63,8 @@ class cacheCommandCase extends CommandUnishTestCase {
     else {
       $this->drush('cache-clear', array('all'), $options);
     }
-    $this->drush('cache-get', array('cache-test-cid'), $options + array('format' => 'json'), NULL, NULL, self::EXIT_ERROR);
+    $result = $this->drush('cache-get', array('cache-test-cid'), $options + array('format' => 'json'), NULL, NULL, self::EXIT_ERROR);
+    $this->assertEquals(self::EXIT_ERROR, $result);
   }
 
   function getOptions() {

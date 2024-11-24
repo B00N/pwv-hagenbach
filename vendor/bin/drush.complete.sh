@@ -34,4 +34,4 @@ if [ -n "$bashSource" ]; then
     fi
 fi
 
-"${dir}/drush.complete.sh" "$@"
+exec "${dir}/drush.complete.sh" "$@"

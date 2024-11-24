@@ -4,10 +4,13 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit23ffb5fd069ba65be27fb42adc6de022
+class ComposerStaticInit3013305c6c0682299098d9ce9fd1ffc3
 {
     public static $files = array (
+        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+        '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
@@ -21,20 +24,30 @@ class ComposerStaticInit23ffb5fd069ba65be27fb42adc6de022
         ),
         'S' => 
         array (
+            'Symfony\\Polyfill\\Php80\\' => 23,
+            'Symfony\\Polyfill\\Php73\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
+            'Symfony\\Contracts\\Service\\' => 26,
+            'Symfony\\Contracts\\EventDispatcher\\' => 34,
             'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\VarDumper\\' => 28,
+            'Symfony\\Component\\Process\\' => 26,
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\EventDispatcher\\' => 34,
-            'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\Console\\' => 26,
         ),
         'P' => 
         array (
             'Psy\\' => 4,
             'Psr\\Log\\' => 8,
+            'Psr\\Container\\' => 14,
             'PhpParser\\' => 10,
+        ),
+        'D' => 
+        array (
+            'Drush\\' => 6,
+            'DrupalFinder\\' => 13,
         ),
         'C' => 
         array (
@@ -52,6 +65,14 @@ class ComposerStaticInit23ffb5fd069ba65be27fb42adc6de022
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
         ),
+        'Symfony\\Polyfill\\Php80\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
+        ),
+        'Symfony\\Polyfill\\Php73\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php73',
+        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
@@ -59,6 +80,14 @@ class ComposerStaticInit23ffb5fd069ba65be27fb42adc6de022
         'Symfony\\Polyfill\\Ctype\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
+        'Symfony\\Contracts\\Service\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/service-contracts',
+        ),
+        'Symfony\\Contracts\\EventDispatcher\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/event-dispatcher-contracts',
         ),
         'Symfony\\Component\\Yaml\\' => 
         array (
@@ -68,6 +97,10 @@ class ComposerStaticInit23ffb5fd069ba65be27fb42adc6de022
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
+        'Symfony\\Component\\Process\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/process',
+        ),
         'Symfony\\Component\\Finder\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/finder',
@@ -75,10 +108,6 @@ class ComposerStaticInit23ffb5fd069ba65be27fb42adc6de022
         'Symfony\\Component\\EventDispatcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
-        ),
-        'Symfony\\Component\\Debug\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/debug',
         ),
         'Symfony\\Component\\Console\\' => 
         array (
@@ -92,9 +121,21 @@ class ComposerStaticInit23ffb5fd069ba65be27fb42adc6de022
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'Drush\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/drush/drush/src',
+        ),
+        'DrupalFinder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webflo/drupal-finder/src',
         ),
         'Consolidation\\OutputFormatters\\' => 
         array (
@@ -109,7 +150,7 @@ class ComposerStaticInit23ffb5fd069ba65be27fb42adc6de022
     public static $prefixesPsr0 = array (
         'D' => 
         array (
-            'Drush' => 
+            'Drush\\' => 
             array (
                 0 => __DIR__ . '/..' . '/drush/drush/lib',
             ),
@@ -120,7 +161,7 @@ class ComposerStaticInit23ffb5fd069ba65be27fb42adc6de022
         ),
         'C' => 
         array (
-            'Consolidation' => 
+            'Consolidation\\' => 
             array (
                 0 => __DIR__ . '/..' . '/drush/drush/lib',
             ),
@@ -128,18 +169,23 @@ class ComposerStaticInit23ffb5fd069ba65be27fb42adc6de022
     );
 
     public static $classMap = array (
+        'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Console_Table' => __DIR__ . '/..' . '/pear/console_table/Table.php',
-        'DrupalFinder\\DrupalFinder' => __DIR__ . '/..' . '/webflo/drupal-finder/src/DrupalFinder.php',
+        'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+        'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
+        'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
+        'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
+        'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit23ffb5fd069ba65be27fb42adc6de022::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit23ffb5fd069ba65be27fb42adc6de022::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit23ffb5fd069ba65be27fb42adc6de022::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit23ffb5fd069ba65be27fb42adc6de022::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit3013305c6c0682299098d9ce9fd1ffc3::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit3013305c6c0682299098d9ce9fd1ffc3::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit3013305c6c0682299098d9ce9fd1ffc3::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit3013305c6c0682299098d9ce9fd1ffc3::$classMap;
 
         }, null, ClassLoader::class);
     }

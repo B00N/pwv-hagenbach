@@ -31,7 +31,7 @@ class QueueCase extends CommandUnishTestCase {
 
     $this->drush('queue-list', array(), $options);
     $output = $this->getOutput();
-    $this->assertContains('aggregator_feeds', $output, 'Queue list shows the declared queue.');
+    $this->assertStringContainsString('aggregator_feeds', $output, 'Queue list shows the declared queue.');
 
     $this->drush('php-script', array('queue_script-D' . UNISH_DRUPAL_MAJOR_VERSION), $options + array('script-path' => dirname(__FILE__) . '/resources'));
     $this->drush('queue-list', array(), $options + array('pipe' => TRUE));
@@ -104,7 +104,8 @@ class QueueCase extends CommandUnishTestCase {
    *   The path to the root directory of Drupal.
    */
   public function setupModulesForTests($root) {
-    $wootModule = __DIR__ . '/resources/modules/d' . UNISH_DRUPAL_MAJOR_VERSION . '/woot';
+    $wootMajor = UNISH_DRUPAL_MAJOR_VERSION == '9' ? '8' : UNISH_DRUPAL_MAJOR_VERSION;
+    $wootModule = __DIR__ . '/resources/modules/d' . $wootMajor . '/woot';
     $modulesDir = "$root/sites/all/modules";
     $this->mkdir($modulesDir);
     \symlink($wootModule, "$modulesDir/woot");
